@@ -4,97 +4,409 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Rajni | Cloud & Cybersecurity Portfolio</title>
-  <meta name="description" content="Rajni's portfolio showcasing cloud architecture, Azure projects, and cybersecurity skills.">
+  <meta name="description" content="Rajni's portfolio in cloud architecture and cybersecurity.">
+  <title>Rajni | Cloud & Cybersecurity</title>
+
   <style>
-    * { box-sizing: border-box; }
+    :root {
+      --background: #faf9f6;
+      --surface: #ffffff;
+      --text: #242424;
+      --muted: #77746f;
+      --red: #e76f73;
+      --pink: #e9a0bd;
+      --green: #83ad91;
+      --line: #eae7e1;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       margin: 0;
-      font-family: Arial, sans-serif;
-      background: #0b1020;
-      color: #f4f7ff;
-      line-height: 1.6;
+      background: var(--background);
+      color: var(--text);
+      font-family: Inter, Arial, sans-serif;
+      line-height: 1.7;
     }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
     nav {
+      max-width: 1120px;
+      margin: auto;
+      padding: 24px 28px;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 22px 8%;
-      border-bottom: 1px solid #26304a;
+      border-bottom: 1px solid var(--line);
     }
-    .logo { font-weight: bold; color: #75e6da; }
-    nav a, .button {
-      color: #f4f7ff;
-      text-decoration: none;
-      margin-left: 18px;
+
+    .logo {
+      font-weight: 750;
+      font-size: 20px;
+      letter-spacing: -1px;
     }
-    main { padding: 100px 8% 70px; max-width: 1100px; }
-    .tag { color: #75e6da; letter-spacing: 2px; font-size: 13px; }
-    h1 { font-size: clamp(42px, 7vw, 76px); line-height: 1.08; margin: 18px 0; }
-    h1 span { color: #75e6da; }
-    .intro { color: #b7c1d9; max-width: 600px; font-size: 18px; }
+
+    .logo span {
+      color: var(--red);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 26px;
+      font-size: 14px;
+      color: var(--muted);
+    }
+
+    .nav-links a:hover {
+      color: var(--text);
+    }
+
+    .container {
+      width: min(100% - 48px, 1000px);
+      margin: auto;
+    }
+
+    .hero {
+      padding-top: 110px;
+      padding-bottom: 105px;
+    }
+
+    .eyebrow {
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 2.5px;
+      color: var(--muted);
+    }
+
+    h1 {
+      max-width: 780px;
+      font-size: clamp(43px, 7vw, 76px);
+      letter-spacing: -4px;
+      line-height: 1.08;
+      margin: 24px 0;
+      font-weight: 750;
+    }
+
+    h1 span {
+      text-decoration: underline;
+      text-decoration-color: var(--pink);
+      text-decoration-thickness: 4px;
+      text-underline-offset: 9px;
+    }
+
+    .intro {
+      max-width: 620px;
+      color: var(--muted);
+      font-size: 17px;
+    }
+
+    .actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 30px;
+    }
+
     .button {
       display: inline-block;
-      margin: 25px 10px 0 0;
-      padding: 12px 20px;
-      border: 1px solid #75e6da;
+      padding: 11px 18px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--surface);
+      font-size: 14px;
+      transition: transform .2s;
+    }
+
+    .button:hover {
+      transform: translateY(-2px);
+    }
+
+    .button-red {
+      border-color: var(--red);
+    }
+
+    section {
+      padding: 42px 0 58px;
+    }
+
+    .section-heading {
+      margin-bottom: 24px;
+    }
+
+    h2 {
+      font-size: 30px;
+      letter-spacing: -1px;
+      margin: 5px 0;
+    }
+
+    .section-description {
+      color: var(--muted);
+      margin-top: 0;
+    }
+
+    .about-card {
+      background: var(--surface);
+      border: 1px solid var(--pink);
+      border-radius: 14px;
+      padding: 28px;
+    }
+
+    .skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 22px;
+    }
+
+    .skill {
+      background: var(--surface);
+      border: 1px solid var(--green);
       border-radius: 7px;
+      padding: 7px 12px;
+      font-size: 13px;
     }
-    .primary { background: #75e6da; color: #0b1020; font-weight: bold; }
-    section { padding: 35px 8% 65px; max-width: 1100px; }
-    h2 { font-size: 30px; }
-    .card {
-      padding: 24px;
-      border: 1px solid #26304a;
-      border-radius: 12px;
-      background: #111a2e;
+
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
     }
-    .muted { color: #b7c1d9; }
-    footer { padding: 25px 8%; border-top: 1px solid #26304a; color: #b7c1d9; }
+
+    .project {
+      background: var(--surface);
+      border: 1px solid var(--red);
+      border-radius: 14px;
+      padding: 25px;
+      transition: transform .2s, box-shadow .2s;
+    }
+
+    .project:nth-child(2) {
+      border-color: var(--pink);
+    }
+
+    .project:nth-child(3) {
+      border-color: var(--green);
+    }
+
+    .project:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 28px #29241a0a;
+    }
+
+    .project-number {
+      font-size: 12px;
+      color: var(--muted);
+      letter-spacing: 2px;
+    }
+
+    h3 {
+      font-size: 20px;
+      margin: 12px 0 8px;
+    }
+
+    .project p {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .project-link {
+      display: inline-block;
+      margin-top: 10px;
+      font-size: 14px;
+      font-weight: 650;
+      text-decoration: underline;
+      text-decoration-color: var(--green);
+      text-underline-offset: 4px;
+    }
+
+    .contact-card {
+      background: var(--surface);
+      border: 1px solid var(--green);
+      border-radius: 14px;
+      padding: 28px;
+    }
+
+    footer {
+      border-top: 1px solid var(--line);
+      margin-top: 40px;
+      padding: 25px 24px;
+      text-align: center;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    @media (max-width: 650px) {
+      nav {
+        padding: 18px 22px;
+      }
+
+      .nav-links {
+        gap: 12px;
+        font-size: 12px;
+      }
+
+      .container {
+        width: min(100% - 36px, 1000px);
+      }
+
+      .hero {
+        padding-top: 75px;
+        padding-bottom: 65px;
+      }
+
+      h1 {
+        letter-spacing: -2px;
+      }
+
+      .projects {
+        grid-template-columns: 1fr;
+      }
+    }
   </style>
 </head>
+
 <body>
   <nav>
-    <div class="logo">RAJNI.dev</div>
-    <div><a href="#about">About</a><a href="#projects">Projects</a></div>
+    <a class="logo" href="#">RAJNI<span>.</span></a>
+    <div class="nav-links">
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </div>
   </nav>
 
-  <main>
-    <div class="tag">CLOUD • SECURITY • INNOVATION</div>
-    <h1>Building smarter<br>solutions with <span>cloud.</span></h1>
-    <p class="intro">
-      Hi, I'm Rajni — an IT graduate exploring cloud architecture,
-      Azure, and cybersecurity through practical projects that
-      solve real-world problems.
-    </p>
-    <a class="button primary" href="#projects">Explore my work ↘</a>
-    <a class="button" href="https://github.com/RAjni634">GitHub profile ↗</a>
+  <main class="container">
+    <header class="hero">
+      <div class="eyebrow">IT Graduate · Cloud · Security</div>
+      <h1>Thoughtful technology.<br>Practical <span>solutions.</span></h1>
+      <p class="intro">
+        Hi, I'm Rajni. I'm building my expertise in cloud architecture
+        and cybersecurity by creating practical projects, exploring
+        modern infrastructure, and designing secure technology solutions.
+      </p>
+
+      <div class="actions">
+        <a class="button button-red" href="#projects">Explore my projects ↗</a>
+        <a class="button" href="https://github.com/RAjni634" target="_blank" rel="noopener noreferrer">GitHub profile ↗</a>
+      </div>
+    </header>
+
+    <section id="about">
+      <div class="section-heading">
+        <div class="eyebrow">A little about me</div>
+        <h2>Curious by nature. Building by practice.</h2>
+      </div>
+      <div class="about-card">
+        <p>
+          My focus is on cloud solutions, identity and access management,
+          and secure systems. I enjoy understanding how technology works
+          and turning ideas into useful, well-documented projects.
+        </p>
+        <p class="section-description">
+          This portfolio is my learning journey — with real project
+          documentation, architecture decisions, and skills demonstrated
+          through hands-on work.
+        </p>
+      </div>
+    </section>
+
+    <section id="skills">
+      <div class="section-heading">
+        <div class="eyebrow">My toolkit</div>
+        <h2>Technologies & interests</h2>
+        <p class="section-description">
+          Areas I'm learning and developing through practical work.
+        </p>
+      </div>
+      <div class="skills">
+        <span class="skill">Microsoft Azure</span>
+        <span class="skill">Cloud Architecture</span>
+        <span class="skill">Identity & Access</span>
+        <span class="skill">Cybersecurity</span>
+        <span class="skill">Git & GitHub</span>
+        <span class="skill">Cloud Networking</span>
+        <span class="skill">Security Best Practices</span>
+      </div>
+    </section>
+
+    <section id="projects">
+      <div class="section-heading">
+        <div class="eyebrow">Selected work</div>
+        <h2>Projects with a purpose.</h2>
+        <p class="section-description">
+          Practical ideas, technical decisions, and lessons learned.
+        </p>
+      </div>
+
+      <div class="projects">
+        <article class="project">
+          <div class="project-number">PROJECT 01 · IDENTITY</div>
+          <h3>Azure AD User Management Portal</h3>
+          <p>
+            Explore identity management, access control, and the design
+            of a cloud-oriented user management solution.
+          </p>
+          <a class="project-link" href="https://github.com/RAjni634/capstone-git" target="_blank" rel="noopener noreferrer">View GitHub project ↗</a>
+        </article>
+
+        <article class="project">
+          <div class="project-number">PROJECT 02 · CLOUD</div>
+          <h3>Cloud Architecture Lab</h3>
+          <p>
+            A space for documented cloud designs, architecture diagrams,
+            deployment choices, and security considerations.
+          </p>
+          <span class="project-link">Coming soon</span>
+        </article>
+
+        <article class="project">
+          <div class="project-number">PROJECT 03 · SECURITY</div>
+          <h3>Cloud Security Assessment</h3>
+          <p>
+            Document security risks, identity controls, and practical
+            recommendations for a sample cloud environment.
+          </p>
+          <span class="project-link">Coming soon</span>
+        </article>
+
+        <article class="project">
+          <div class="project-number">PROJECT 04 · INNOVATION</div>
+          <h3>Smart Flyer Tracking Concept</h3>
+          <p>
+            Explore how GPS data and cloud services could help monitor
+            distribution coverage and operational progress.
+          </p>
+          <span class="project-link">Coming soon</span>
+        </article>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="contact-card">
+        <div class="eyebrow">Let's connect</div>
+        <h2>Have a project or opportunity?</h2>
+        <p class="section-description">
+          Explore my code, follow my learning journey, or connect with me
+          professionally.
+        </p>
+        <a class="button button-red" href="https://github.com/RAjni634" target="_blank" rel="noopener noreferrer">Connect on GitHub ↗</a>
+      </div>
+    </section>
   </main>
 
-  <section id="about">
-    <h2>About me</h2>
-    <p class="muted">
-      I'm developing practical skills in cloud technologies,
-      secure system design, and modern IT solutions. My portfolio
-      documents what I build, how it works, and what I learn.
-    </p>
-  </section>
-
-  <section id="projects">
-    <h2>Featured project</h2>
-    <div class="card">
-      <p class="tag">01 / CLOUD PROJECT</p>
-      <h3>Azure AD User Management Portal</h3>
-      <p class="muted">
-        A portfolio project exploring identity management,
-        access control, and cloud application design.
-      </p>
-      <a class="button" href="https://github.com/RAjni634/capstone-git">
-        View project on GitHub ↗
-      </a>
-    </div>
-  </section>
-
-  <footer>© 2026 Rajni · Built with curiosity and code.</footer>
+  <footer>
+    © 2026 Rajni · Designed with care and built with HTML & CSS.
+  </footer>
 </body>
 </html>

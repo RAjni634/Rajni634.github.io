@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Rajni — My Journal</title>
+  <meta name="robots" content="noindex">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Inter:wght@300;400;500&family=Playfair+Display:ital,wght@0,400..700;1,400..700&family=Caveat:wght@400;600&family=Noto+Serif+Devanagari:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    :root { --ivory:#f4efe6; --warm:#fbf8f2; --black:#0e0e0e; --gold:#b59a5b; --bronze:#8d7843; }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: Inter, system-ui, sans-serif; font-weight: 300; background: var(--ivory); color: var(--black); line-height: 1.6;
+      background-image: repeating-linear-gradient(to bottom, transparent 0 47px, rgba(14,14,14,.07) 47px 48px); }
+    .wrap { max-width: 46rem; margin: 0 auto; padding: 4rem 1.4rem 6rem; }
+    a { color: inherit; }
+    .top { display: flex; justify-content: space-between; align-items: center; font-size: .66rem; letter-spacing: .22em; text-transform: uppercase; }
+    .top a { text-decoration: none; border-bottom: 1px solid var(--gold); padding-bottom: 2px; }
+    small.eyebrow { display: block; margin: 3rem 0 1rem; font-size: .66rem; letter-spacing: .28em; text-transform: uppercase; color: var(--gold); font-weight: 500; }
+    h1 { font-family: "Playfair Display", serif; font-weight: 500; font-size: clamp(2.4rem, 7vw, 4rem); line-height: 1.05; letter-spacing: -.02em; }
+    h1 em { font-family: "Cormorant Garamond", serif; color: var(--gold); font-weight: 400; }
+    .lede { font-family: "Cormorant Garamond", serif; font-style: italic; font-size: 1.3rem; margin-top: 1rem; opacity: .85; }
+    .bar { display: flex; flex-wrap: wrap; gap: .7rem; margin: 2rem 0 .6rem; }
+    button { font: inherit; cursor: pointer; border: 1px solid var(--black); background: none; border-radius: 99px; padding: .6rem 1.2rem; font-size: .66rem; letter-spacing: .2em; text-transform: uppercase; transition: background .3s, color .3s; }
+    button:hover { background: var(--black); color: var(--ivory); }
+    .hint { font-size: .78rem; opacity: .65; }
+    .entry { position: relative; background: var(--warm); margin: 2rem 0; padding: 1.8rem 1.6rem 1.4rem; box-shadow: 0 30px 50px -26px rgba(0,0,0,.35);
+      background-image: repeating-linear-gradient(to bottom, transparent 0 31px, rgba(14,14,14,.07) 31px 32px); }
+    .entry::before { content: ""; position: absolute; top: -7px; left: 50%; width: 14px; height: 14px; margin-left: -7px; border-radius: 50%; background: radial-gradient(circle at 35% 30%, #e3d3a6, var(--gold) 55%, #6e5a2a); box-shadow: 0 4px 6px rgba(0,0,0,.35); }
+    .meta { display: flex; justify-content: space-between; font-size: .6rem; letter-spacing: .22em; text-transform: uppercase; color: var(--bronze); }
+    .entry h2 { font-family: "Playfair Display", serif; font-weight: 500; font-size: 1.6rem; margin: .5rem 0 .6rem; outline: none; }
+    .entry .body { font-family: "Cormorant Garamond", serif; font-size: 1.25rem; line-height: 1.55; outline: none; white-space: pre-wrap; }
+    .entry .body.hand { font-family: Caveat, "Segoe Script", cursive; font-size: 1.6rem; line-height: 1.5; }
+    .entry [contenteditable]:focus { background: rgba(181,154,91,.12); border-radius: 4px; }
+    .del { position: absolute; top: .8rem; right: 1rem; border: 0; padding: .2rem .5rem; font-size: 1rem; letter-spacing: 0; opacity: .35; }
+    .del:hover { opacity: 1; background: none; color: #a0454b; }
+    .mantra { text-align: center; background: #1a1917; color: var(--ivory); padding: 2rem 1.4rem; margin: 2.4rem 0; border: 1px solid rgba(181,154,91,.5); }
+    .mantra .sa { font-family: "Noto Serif Devanagari", "Noto Sans Devanagari", "Mangal", serif; font-size: clamp(1.8rem, 6vw, 2.8rem); color: #d6c398; }
+    .mantra .tr { font-family: "Cormorant Garamond", serif; font-style: italic; font-size: 1.2rem; margin-top: .3rem; }
+    .mantra p { font-size: .85rem; opacity: .75; margin-top: .7rem; }
+    footer { margin-top: 3rem; font-size: .8rem; opacity: .7; }
+    @media print { .bar, .del, .top { display: none; } }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="top"><a href="index.html">← Back to the portfolio</a><span id="saved">Saved in this browser</span></div>
+
+    <small class="eyebrow">The private journal of Rajni</small>
+    <h1>Gratitude, hobbies &amp; <em>small notes.</em></h1>
+    <p class="lede">Click any title or text to edit it. Your changes save automatically on this device.</p>
+
+    <div class="bar">
+      <button id="add">+ New entry</button>
+      <button id="export">Download as text</button>
+      <button id="reset">Reset to the original</button>
+    </div>
+    <p class="hint">Tip: to change the journal for every visitor, edit the entries inside <code>journal.html</code> and re-upload the site.</p>
+
+    <div class="mantra">
+      <div class="sa" lang="sa">ॐ शं शनैश्चराय नमः</div>
+      <div class="tr">Om Śaṁ Śanaiścarāya Namaḥ</div>
+      <p>Salutations to Shani — patience, discipline and steady effort.</p>
+    </div>
+
+    <div id="entries"></div>
+
+    <footer>“Slow is a speed. Steady is a style.” — Rajni</footer>
+  </div>
+
+<script>
+(function () {
+  var KEY = "rajni-journal-v1";
+  var DEFAULTS = [
+    { date: "Entry 01 · Gratitude", title: "How I came to Australia", hand: false,
+      body: "I came here to study — two master's degrees, in IT and cyber security — in a country that felt very far from home.\n\nThe first months were quiet and the work was long. But Sydney gave me room to build: new skills, new projects, and a habit of starting small and finishing.\n\nI'm grateful for every step that brought me here, and for the people who made it feel a little more like home." },
+    { date: "Entry 02 · Gratitude", title: "Today I'm grateful for…", hand: true,
+      body: "1. a quiet morning and a good book\n2. the people who helped me settle in\n3. being able to build things from nothing\n4. tea that is still warm when I finish writing" },
+    { date: "Entry 03 · Hobbies", title: "Collecting hobbies on purpose", hand: false,
+      body: "Right now it's books — a few pages every night.\n\nThen design, small builds, a home lab on weekends. The point isn't to be good fast. It's to be curious on a schedule, and to enjoy the slow part.\n\nNext hobby to try: " },
+    { date: "Entry 04 · Reading", title: "Lines worth keeping", hand: false,
+      body: "“Do the thing, and you shall have the power.” — Ralph Waldo Emerson, Self-Reliance\n\n“Books are the best of things, well used.” — Ralph Waldo Emerson, Society and Solitude" }
+  ];
+  var box = document.getElementById("entries"), saved = document.getElementById("saved");
+
+  function load() { try { var r = localStorage.getItem(KEY); if (r) return JSON.parse(r); } catch (e) {} return JSON.parse(JSON.stringify(DEFAULTS)); }
+  var data = load();
+  function persist() { try { localStorage.setItem(KEY, JSON.stringify(data)); saved.textContent = "Saved in this browser"; } catch (e) { saved.textContent = "Could not save (private mode?)"; } }
+
+  function render() {
+    box.innerHTML = "";
+    data.forEach(function (e, i) {
+      var el = document.createElement("article"); el.className = "entry";
+      el.innerHTML = '<button class="del" title="Delete entry" aria-label="Delete entry">×</button>' +
+        '<div class="meta"><span contenteditable="true" data-k="date"></span></div>' +
+        '<h2 contenteditable="true" data-k="title"></h2>' +
+        '<div class="body' + (e.hand ? ' hand' : '') + '" contenteditable="true" data-k="body"></div>';
+      el.querySelectorAll("[data-k]").forEach(function (n) {
+        n.textContent = e[n.dataset.k];
+        n.addEventListener("input", function () { data[i][n.dataset.k] = n.innerText; persist(); });
+      });
+      el.querySelector(".del").addEventListener("click", function () { if (confirm("Delete this entry?")) { data.splice(i, 1); persist(); render(); } });
+      box.appendChild(el);
+    });
+  }
+  document.getElementById("add").addEventListener("click", function () {
+    var d = new Date().toLocaleDateString("en-AU", { day: "numeric", month: "long", year: "numeric" });
+    data.unshift({ date: d + " · Gratitude", title: "Today I'm grateful for…", hand: true, body: "1. \n2. \n3. " });
+    persist(); render(); var f = box.querySelector(".body"); if (f) f.focus();
+  });
+  document.getElementById("reset").addEventListener("click", function () { if (confirm("Replace everything with the original entries?")) { data = JSON.parse(JSON.stringify(DEFAULTS)); persist(); render(); } });
+  document.getElementById("export").addEventListener("click", function () {
+    var txt = data.map(function (e) { return e.date + "\n" + e.title + "\n\n" + e.body; }).join("\n\n— — —\n\n");
+    var a = document.createElement("a"); a.href = URL.createObjectURL(new Blob([txt], { type: "text/plain" })); a.download = "rajni-journal.txt"; a.click();
+  });
+  render();
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 800" width="600" height="800">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f1e9d8"/><stop offset="1" stop-color="#d8c8a2"/></linearGradient>
+    <linearGradient id="gold" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#e3d3a6"/><stop offset=".6" stop-color="#b59a5b"/><stop offset="1" stop-color="#8d7843"/></linearGradient>
+    <filter id="blur"><feGaussianBlur stdDeviation="12"/></filter>
+  </defs>
+  <rect width="600" height="800" fill="url(#bg)"/>
+  <rect x="0" y="600" width="600" height="200" fill="#c9b78d" opacity=".55"/>
+  <ellipse cx="300" cy="606" rx="230" ry="20" fill="#2a2214" opacity=".35" filter="url(#blur)"/>
+  <!-- bottom book: ink -->
+  <g>
+    <rect x="110" y="520" width="380" height="82" rx="4" fill="#15140f"/>
+    <rect x="474" y="524" width="16" height="74" fill="#f4efe6"/>
+    <path d="M474 534H490M474 544H490M474 554H490M474 564H490M474 574H490M474 584H490" stroke="#cbbf9f"/>
+    <rect x="110" y="520" width="26" height="82" fill="#0c0c0a"/>
+    <path d="M168 524V598M178 524V598" stroke="#b59a5b" stroke-width="1.4"/>
+    <text x="300" y="568" text-anchor="middle" font-family="Georgia, serif" font-size="22" letter-spacing="8" fill="url(#gold)">TYPOGRAPHY</text>
+  </g>
+  <!-- middle book: bone -->
+  <g transform="rotate(-2 300 480)">
+    <rect x="140" y="440" width="340" height="72" rx="4" fill="#efe6d2" stroke="#cdbb92"/>
+    <rect x="464" y="444" width="16" height="64" fill="#fbf8f2"/>
+    <path d="M464 454H480M464 464H480M464 474H480M464 484H480M464 494H480" stroke="#d9ccb0"/>
+    <rect x="140" y="440" width="22" height="72" fill="#d8c8a2"/>
+    <path d="M196 444V508M206 444V508" stroke="#8d7843" stroke-width="1.2"/>
+    <text x="320" y="484" text-anchor="middle" font-family="Georgia, serif" font-size="20" font-style="italic" fill="#2a2214">Grids &amp; Layout</text>
+  </g>
+  <!-- top book: berry -->
+  <g transform="rotate(3 310 410)">
+    <rect x="165" y="372" width="300" height="66" rx="4" fill="#8f3b42"/>
+    <rect x="450" y="376" width="15" height="58" fill="#f4efe6"/>
+    <path d="M450 384H465M450 392H465M450 400H465M450 408H465M450 416H465" stroke="#cbbf9f"/>
+    <rect x="165" y="372" width="20" height="66" fill="#6e2c32"/>
+    <path d="M214 376V434" stroke="#e3d3a6" stroke-width="1.2"/>
+    <text x="320" y="412" text-anchor="middle" font-family="Georgia, serif" font-size="19" letter-spacing="6" fill="#f1dfb5">BRAND</text>
+  </g>
+  <!-- candle -->
+  <g transform="translate(330 300)">
+    <rect x="0" y="40" width="64" height="38" rx="6" fill="#2b2824"/>
+    <rect x="6" y="36" width="52" height="8" rx="4" fill="#b59a5b"/>
+    <path d="M32 36V26" stroke="#2a2214" stroke-width="2"/>
+    <path d="M32 6C42 16 40 26 32 26C24 26 22 16 32 6Z" fill="#f7d98b"/>
+    <circle cx="32" cy="18" r="30" fill="#f7d98b" opacity=".18" filter="url(#blur)"/>
+  </g>
+  <!-- plant -->
+  <g transform="translate(120 330)">
+    <path d="M30 120C30 80 20 50 0 30M30 120C32 70 44 40 68 20M30 120C34 90 60 78 84 80" stroke="#6d7f5c" stroke-width="4" fill="none" stroke-linecap="round"/>
+    <path d="M0 30C10 26 16 34 14 44C6 44 0 38 0 30ZM68 20C60 14 52 20 54 30C62 32 68 28 68 20ZM84 80C76 72 66 78 70 88C78 90 84 86 84 80Z" fill="#7d9169"/>
+    <path d="M6 120H56L50 152H12Z" fill="#a98f5a"/>
+  </g>
+</svg>

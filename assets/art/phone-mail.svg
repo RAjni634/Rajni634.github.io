@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 800" width="600" height="800">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#2b2824"/><stop offset="1" stop-color="#100f0d"/></linearGradient>
+    <linearGradient id="body" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#d9d3c3"/><stop offset=".5" stop-color="#8c8778"/><stop offset="1" stop-color="#cfc8b4"/></linearGradient>
+    <linearGradient id="scr" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fbf8f2"/><stop offset="1" stop-color="#e9e1d1"/></linearGradient>
+    <linearGradient id="gold" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#e3d3a6"/><stop offset=".5" stop-color="#b59a5b"/><stop offset="1" stop-color="#8d7843"/></linearGradient>
+    <radialGradient id="halo" cx=".5" cy=".4" r=".6"><stop offset="0" stop-color="#b59a5b" stop-opacity=".35"/><stop offset="1" stop-color="#b59a5b" stop-opacity="0"/></radialGradient>
+    <filter id="blur"><feGaussianBlur stdDeviation="14"/></filter>
+  </defs>
+  <rect width="600" height="800" fill="url(#bg)"/>
+  <circle cx="300" cy="360" r="300" fill="url(#halo)"/>
+  <ellipse cx="300" cy="722" rx="150" ry="18" fill="#000" opacity=".55" filter="url(#blur)"/>
+  <!-- phone body -->
+  <rect x="170" y="80" width="260" height="620" rx="46" fill="url(#body)"/>
+  <rect x="176" y="86" width="248" height="608" rx="41" fill="#0a0a09"/>
+  <rect x="184" y="94" width="232" height="592" rx="34" fill="url(#scr)"/>
+  <!-- island -->
+  <rect x="262" y="106" width="76" height="22" rx="11" fill="#0a0a09"/>
+  <!-- status -->
+  <text x="208" y="122" font-family="Helvetica, Arial, sans-serif" font-size="12" font-weight="600" fill="#1a1917">9:41</text>
+  <!-- big mail icon -->
+  <g transform="translate(300 330)">
+    <circle r="96" fill="#1a1917"/>
+    <circle r="96" fill="none" stroke="url(#gold)" stroke-width="3"/>
+    <rect x="-52" y="-34" width="104" height="70" rx="8" fill="none" stroke="url(#gold)" stroke-width="5"/>
+    <path d="M-50 -30L0 12L50 -30" fill="none" stroke="url(#gold)" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="62" cy="-56" r="18" fill="#a0454b"/><text x="62" y="-50" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="20" font-weight="700" fill="#fff">1</text>
+  </g>
+  <text x="300" y="476" text-anchor="middle" font-family="Georgia, serif" font-size="26" fill="#1a1917">Say hello</text>
+  <text x="300" y="502" text-anchor="middle" font-family="Georgia, serif" font-size="14" font-style="italic" fill="#6a6252">I reply within a day</text>
+  <!-- buttons -->
+  <rect x="226" y="540" width="148" height="40" rx="20" fill="#1a1917"/>
+  <text x="300" y="565" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="12" letter-spacing="2" fill="#e3d3a6">WRITE</text>
+  <rect x="226" y="592" width="148" height="40" rx="20" fill="none" stroke="#1a1917"/>
+  <g transform="translate(262 612)" fill="none" stroke="#1a1917" stroke-width="2" stroke-linecap="round"><path d="M0 -8C0 -8 -3 -4 -1 0C1 4 6 8 8 6L10 4L6 0L4 2C2 1 0 -1 -1 -3L1 -5Z"/></g>
+  <text x="318" y="617" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="12" letter-spacing="2" fill="#1a1917">CALL</text>
+  <rect x="266" y="664" width="68" height="5" rx="2.5" fill="#1a1917" opacity=".8"/>
+  <!-- floating envelope -->
+  <g transform="translate(470 210) rotate(14)"><rect x="-34" y="-22" width="68" height="44" rx="5" fill="#f4efe6" stroke="#b59a5b" stroke-width="2"/><path d="M-32 -18L0 6L32 -18" fill="none" stroke="#b59a5b" stroke-width="2"/></g>
+  <g transform="translate(118 520) rotate(-12) scale(.8)"><rect x="-34" y="-22" width="68" height="44" rx="5" fill="#f4efe6" stroke="#b59a5b" stroke-width="2"/><path d="M-32 -18L0 6L32 -18" fill="none" stroke="#b59a5b" stroke-width="2"/></g>
+</svg>

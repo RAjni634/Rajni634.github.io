@@ -2,6 +2,8 @@
 
 A luxury horizontal-scrolling portfolio. Plain HTML, CSS and JavaScript with GSAP, ScrollTrigger and Lenis (bundled locally in js/vendor). No build step.
 
+Live Link: https://rajni.rajni12499.workers.dev/
+
 ## Folder structure
 
 ```
